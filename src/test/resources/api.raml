@@ -1,0 +1,11 @@
+#%RAML 0.8
+title: JRaml test API
+version: v1
+baseUri: http://jraml.org
+protocols: [ HTTP ]
+/test:
+  post:
+      queryParameters:
+        testId:
+  /{testId}:
+      get:
