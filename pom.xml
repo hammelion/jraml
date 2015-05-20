@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jraml</artifactId>
     <packaging>jar</packaging>
-    <groupId>org.jraml</groupId>
+    <groupId>com.github.hammelion</groupId>
     <version>0.2-SNAPSHOT</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Jraml helps you build your java implementation of REST API, based on specification, described by raml file.
