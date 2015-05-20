@@ -27,14 +27,36 @@
 <h1>
 <a id="easy-to-use" class="anchor" href="#easy-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>Easy to use</h1>
 
-<ol>
-<li>Connect a library</li>
-<li>Add listener to your servlet container configuration</li>
-<li>Annotate your resources with <strong>@RAMLConfig</strong> annotation</li>
-</ol>
+<h2>
+<a id="connect-a-library" class="anchor" href="#connect-a-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>Connect a library</h2>
+
+<div class="highlight highlight-xml"><pre>...
+        &lt;<span class="pl-ent">dependency</span>&gt;
+            &lt;<span class="pl-ent">groupId</span>&gt;org.jraml&lt;/<span class="pl-ent">groupId</span>&gt;
+            &lt;<span class="pl-ent">artifactId</span>&gt;jraml&lt;/<span class="pl-ent">artifactId</span>&gt;
+            &lt;<span class="pl-ent">version</span>&gt;0.1&lt;/<span class="pl-ent">version</span>&gt;
+        &lt;/<span class="pl-ent">dependency</span>&gt;
+...</pre></div>
 
 <h2>
-<a id="useful-links" class="anchor" href="#useful-links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Useful links</h2>
+<a id="add-listener-to-your-servlet-container-configuration-webxml" class="anchor" href="#add-listener-to-your-servlet-container-configuration-webxml" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add listener to your servlet container configuration (web.xml)</h2>
+
+<div class="highlight highlight-xml"><pre>...
+    &lt;<span class="pl-ent">listener</span>&gt;
+        &lt;<span class="pl-ent">listener-class</span>&gt;org.jraml.JRamlBootstrap&lt;/<span class="pl-ent">listener-class</span>&gt;
+    &lt;/<span class="pl-ent">listener</span>&gt;
+...</pre></div>
+
+<h2>
+<a id="annotate-your-resources-with-ramlconfig-annotation" class="anchor" href="#annotate-your-resources-with-ramlconfig-annotation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Annotate your resources with <strong>@RAMLConfig</strong> annotation</h2>
+
+<div class="highlight highlight-java"><pre><span class="pl-c1">...</span>
+@RAMLConfig(<span class="pl-s"><span class="pl-pds">"</span>api.raml<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TestResource</span> {
+<span class="pl-c1">...</span></pre></div>
+
+<h1>
+<a id="useful-links" class="anchor" href="#useful-links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Useful links</h1>
 
 <p><a href="http://raml.org/">RAML</a></p>
 
