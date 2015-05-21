@@ -32,7 +32,7 @@
 
 <div class="highlight highlight-xml"><pre>...
         &lt;<span class="pl-ent">dependency</span>&gt;
-            &lt;<span class="pl-ent">groupId</span>&gt;org.jraml&lt;/<span class="pl-ent">groupId</span>&gt;
+            &lt;<span class="pl-ent">groupId</span>&gt;com.github.hammelion&lt;/<span class="pl-ent">groupId</span>&gt;
             &lt;<span class="pl-ent">artifactId</span>&gt;jraml&lt;/<span class="pl-ent">artifactId</span>&gt;
             &lt;<span class="pl-ent">version</span>&gt;0.1&lt;/<span class="pl-ent">version</span>&gt;
         &lt;/<span class="pl-ent">dependency</span>&gt;
@@ -54,6 +54,31 @@
 @RAMLConfig(<span class="pl-s"><span class="pl-pds">"</span>api.raml<span class="pl-pds">"</span></span>)
 <span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TestResource</span> {
 <span class="pl-c1">...</span></pre></div>
+
+<p><code>api.raml</code> should be on resources classpath</p>
+
+<h1>
+<a id="naming-conventions" class="anchor" href="#naming-conventions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Naming conventions</h1>
+
+<table>
+<thead>
+<tr>
+<th>RAML</th>
+<th>JAX-RS without JRAML</th>
+<th>Pure Java with JRAML</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resource <code>/testResource</code>
+</td>
+<td>
+<code>@Path("/testResource")</code><br><code>public class AnyName {</code>
+</td>
+<td><code>public class TestResource {</code></td>
+</tr>
+</tbody>
+</table>
 
 <h1>
 <a id="useful-links" class="anchor" href="#useful-links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Useful links</h1>
