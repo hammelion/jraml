@@ -26,7 +26,7 @@ public class JRamlBootstrapTest {
 
     @Before
     public void setUp() throws Exception {
-        this.testResource = classLoader.loadClass("TestResource").newInstance();
+        this.testResource = classLoader.loadClass("com.github.hammelion.resources.TestResource").newInstance();
     }
 
     @Test
