@@ -60,41 +60,52 @@
 <h1>
 <a id="naming-conventions" class="anchor" href="#naming-conventions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Naming conventions</h1>
 
-<table>
-<thead>
-<tr>
-<th>REST</th>
-<th>RAML</th>
-<th>JAX-RS without JRAML</th>
-<th>Pure Java with JRAML</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>URL: /testResource</td>
-<td>Resource <code>/testResource:</code>
-</td>
-<td>
-<code>@Path("/testResource")</code><br><code>public class AnyName {</code>
-</td>
-<td>
-<code>public class</code> <strong>TestResource</strong> <code>{</code>
-</td>
-</tr>
-<tr>
-<td>GET: /testResource</td>
-<td>
-<code>/testResource:</code><br><code>get:</code>
-</td>
-<td>
-<code>@Path("/testResource")</code><br><code>public class AnyName {</code><br><code>...</code><br><code>@GET</code><br><code>public ReturnType methodName() {</code>
-</td>
-<td>
-<code>public class TestResource {</code><br><code>...</code><br><code>public ReturnType</code> <strong>get</strong><code>AnyName()</code>
-</td>
-</tr>
-</tbody>
-</table>
+<p>In order to map RAML structure to java code you should name your classes, methods and parameters according to the following convention:</p>
+
+<h2>
+<a id="class-name" class="anchor" href="#class-name" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class name</h2>
+
+<p>A java class represents a specific RAML Resource. That is why the class name should end with <strong>Resource</strong>. E.g.:</p>
+
+<p>To define REST URL /test we specify it in RAML file:</p>
+
+<div class="highlight highlight-xml"><pre>/testResource:</pre></div>
+
+<p>By using JAX-RS we would annotate our java code:</p>
+
+<div class="highlight highlight-java"><pre>@Path(<span class="pl-s"><span class="pl-pds">"</span>/test<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyName</span> {</pre></div>
+
+<p>And with JRAML the code transforms into:</p>
+
+<div class="highlight highlight-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TestResource</span></pre></div>
+
+<h2>
+<a id="method-name" class="anchor" href="#method-name" aria-hidden="true"><span class="octicon octicon-link"></span></a>Method name</h2>
+
+<p>A java method represents a specific action on RAML Resource. That is why the method name should start with action name. E.g.:</p>
+
+<h3>
+<a id="get" class="anchor" href="#get" aria-hidden="true"><span class="octicon octicon-link"></span></a>GET</h3>
+
+<p>To define GET on /test URL we specify it in RAML file:</p>
+
+<div class="highlight highlight-xml"><pre>/testResource:
+  get:</pre></div>
+
+<p>By using JAX-RS we would annotate our java code:</p>
+
+<div class="highlight highlight-java"><pre>@Path(<span class="pl-s"><span class="pl-pds">"</span>/test<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyName</span> {
+<span class="pl-c1">...</span>
+<span class="pl-k">@GET</span>
+<span class="pl-k">public</span> <span class="pl-smi">ReturnType</span> <span class="pl-en">methodName</span>() {</pre></div>
+
+<p>And with JRAML the code transforms into:</p>
+
+<div class="highlight highlight-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TestResource</span>
+...
+<span class="pl-k">public</span> ReturnType getAnyName()</pre></div>
 
 <h1>
 <a id="useful-links" class="anchor" href="#useful-links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Useful links</h1>
