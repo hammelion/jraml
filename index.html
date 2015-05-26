@@ -67,11 +67,11 @@
 
 <p>A java class represents a specific RAML Resource. That is why the class name should end with <strong>Resource</strong>. E.g.:</p>
 
-<p>To define REST URL /test we specify it in RAML file:</p>
+<p>To define REST URL <code>/test</code> we specify it in RAML file:</p>
 
 <div class="highlight highlight-xml"><pre>/testResource:</pre></div>
 
-<p>By using JAX-RS we would annotate our java code:</p>
+<p>By using JAX-RS we would annotate our java code as follows:</p>
 
 <div class="highlight highlight-java"><pre>@Path(<span class="pl-s"><span class="pl-pds">"</span>/test<span class="pl-pds">"</span></span>)
 <span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyName</span> {</pre></div>
@@ -88,12 +88,12 @@
 <h3>
 <a id="get" class="anchor" href="#get" aria-hidden="true"><span class="octicon octicon-link"></span></a>GET</h3>
 
-<p>To define GET on /test URL we specify it in RAML file:</p>
+<p>To define GET on <code>/test</code> URL we specify it in RAML file:</p>
 
 <div class="highlight highlight-xml"><pre>/testResource:
   get:</pre></div>
 
-<p>By using JAX-RS we would annotate our java code:</p>
+<p>By using JAX-RS we would annotate our java code as follows:</p>
 
 <div class="highlight highlight-java"><pre>@Path(<span class="pl-s"><span class="pl-pds">"</span>/test<span class="pl-pds">"</span></span>)
 <span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyName</span> {
@@ -106,6 +106,72 @@
 <div class="highlight highlight-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TestResource</span>
 ...
 <span class="pl-k">public</span> ReturnType getAnyName()</pre></div>
+
+<h3>
+<a id="post" class="anchor" href="#post" aria-hidden="true"><span class="octicon octicon-link"></span></a>POST</h3>
+
+<p>To define POST on <code>/test</code> URL we specify it in RAML file:</p>
+
+<div class="highlight highlight-xml"><pre>/testResource:
+  post:</pre></div>
+
+<p>By using JAX-RS we would annotate our java code as follows:</p>
+
+<div class="highlight highlight-java"><pre>@Path(<span class="pl-s"><span class="pl-pds">"</span>/test<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyName</span> {
+<span class="pl-c1">...</span>
+<span class="pl-k">@POST</span>
+<span class="pl-k">public</span> <span class="pl-smi">ReturnType</span> <span class="pl-en">methodName</span>() {</pre></div>
+
+<p>And with JRAML the code transforms into:</p>
+
+<div class="highlight highlight-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TestResource</span>
+...
+<span class="pl-k">public</span> ReturnType postAnyName()</pre></div>
+
+<h3>
+<a id="put" class="anchor" href="#put" aria-hidden="true"><span class="octicon octicon-link"></span></a>PUT</h3>
+
+<p>To define PUT on <code>/test</code> URL we specify it in RAML file:</p>
+
+<div class="highlight highlight-xml"><pre>/testResource:
+  put:</pre></div>
+
+<p>By using JAX-RS we would annotate our java code as follows:</p>
+
+<div class="highlight highlight-java"><pre>@Path(<span class="pl-s"><span class="pl-pds">"</span>/test<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyName</span> {
+<span class="pl-c1">...</span>
+<span class="pl-k">@PUT</span>
+<span class="pl-k">public</span> <span class="pl-smi">ReturnType</span> <span class="pl-en">methodName</span>() {</pre></div>
+
+<p>And with JRAML the code transforms into:</p>
+
+<div class="highlight highlight-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TestResource</span>
+...
+<span class="pl-k">public</span> ReturnType putAnyName()</pre></div>
+
+<h3>
+<a id="delete" class="anchor" href="#delete" aria-hidden="true"><span class="octicon octicon-link"></span></a>DELETE</h3>
+
+<p>To define DELETE on <code>/test</code> URL we specify it in RAML file:</p>
+
+<div class="highlight highlight-xml"><pre>/testResource:
+  delete:</pre></div>
+
+<p>By using JAX-RS we would annotate our java code as follows:</p>
+
+<div class="highlight highlight-java"><pre>@Path(<span class="pl-s"><span class="pl-pds">"</span>/test<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyName</span> {
+<span class="pl-c1">...</span>
+<span class="pl-k">@DELETE</span>
+<span class="pl-k">public</span> <span class="pl-smi">ReturnType</span> <span class="pl-en">methodName</span>() {</pre></div>
+
+<p>And with JRAML the code transforms into:</p>
+
+<div class="highlight highlight-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TestResource</span>
+...
+<span class="pl-k">public</span> ReturnType deleteAnyName()</pre></div>
 
 <h1>
 <a id="useful-links" class="anchor" href="#useful-links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Useful links</h1>
