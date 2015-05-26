@@ -34,7 +34,7 @@
         &lt;<span class="pl-ent">dependency</span>&gt;
             &lt;<span class="pl-ent">groupId</span>&gt;com.github.hammelion&lt;/<span class="pl-ent">groupId</span>&gt;
             &lt;<span class="pl-ent">artifactId</span>&gt;jraml&lt;/<span class="pl-ent">artifactId</span>&gt;
-            &lt;<span class="pl-ent">version</span>&gt;0.1&lt;/<span class="pl-ent">version</span>&gt;
+            &lt;<span class="pl-ent">version</span>&gt;0.2.2&lt;/<span class="pl-ent">version</span>&gt;
         &lt;/<span class="pl-ent">dependency</span>&gt;
 ...</pre></div>
 
@@ -63,6 +63,7 @@
 <table>
 <thead>
 <tr>
+<th>REST</th>
 <th>RAML</th>
 <th>JAX-RS without JRAML</th>
 <th>Pure Java with JRAML</th>
@@ -70,12 +71,27 @@
 </thead>
 <tbody>
 <tr>
-<td>Resource <code>/testResource</code>
+<td>URL: /testResource</td>
+<td>Resource <code>/testResource:</code>
 </td>
 <td>
 <code>@Path("/testResource")</code><br><code>public class AnyName {</code>
 </td>
-<td><code>public class TestResource {</code></td>
+<td>
+<code>public class</code> <strong>TestResource</strong> <code>{</code>
+</td>
+</tr>
+<tr>
+<td>GET: /testResource</td>
+<td>
+<code>/testResource:</code><br><code>get:</code>
+</td>
+<td>
+<code>@Path("/testResource")</code><br><code>public class AnyName {</code><br><code>...</code><br><code>@GET</code><br><code>public ReturnType methodName() {</code>
+</td>
+<td>
+<code>public class TestResource {</code><br><code>...</code><br><code>public ReturnType</code> <strong>get</strong><code>AnyName()</code>
+</td>
 </tr>
 </tbody>
 </table>
