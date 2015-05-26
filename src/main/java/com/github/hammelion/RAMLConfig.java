@@ -1,4 +1,4 @@
-package org.jraml;
+package com.github.hammelion;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package org.jraml.resources;
+package com.github.hammelion.resources;
 
 import java.lang.annotation.Annotation;
 
@@ -6,7 +6,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
-import org.jraml.resources.model.TestId;
+import com.github.hammelion.resources.model.TestId;
 
 @Path("test")
 public class RAMLFreeTestResource {

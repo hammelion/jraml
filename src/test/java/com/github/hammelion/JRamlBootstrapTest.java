@@ -1,13 +1,13 @@
-package org.jraml;
+package com.github.hammelion;
 
 import java.lang.annotation.Annotation;
 import java.util.List;
 
 import javax.inject.Inject;
 
+import com.github.hammelion.classloaders.JRamlClassLoader;
 import org.apache.commons.lang.ArrayUtils;
-import org.jraml.classloaders.JRamlClassLoader;
-import org.jraml.resources.model.TestId;
+import com.github.hammelion.resources.model.TestId;
 import org.jukito.JukitoRunner;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,7 +26,7 @@ public class JRamlBootstrapTest {
 
     @Before
     public void setUp() throws Exception {
-        this.testResource = classLoader.loadClass("org.jraml.resources.TestResource").newInstance();
+        this.testResource = classLoader.loadClass("TestResource").newInstance();
     }
 
     @Test

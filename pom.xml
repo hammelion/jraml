@@ -112,7 +112,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>org.jraml.JRamlBootstrap</mainClass>
+                            <mainClass>com.github.hammelion.JRamlBootstrap</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

@@ -1,8 +1,5 @@
-package org.jraml.matchers.method;
+package com.github.hammelion.matchers.method;
 
-import org.jraml.resources.RAMLFreeTestResource;
-import org.jraml.resources.TestResource;
-import org.jraml.resources.model.TestId;
 import org.jukito.JukitoRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,8 +7,6 @@ import org.raml.model.Action;
 import org.raml.model.ActionType;
 
 import javax.inject.Inject;
-
-import static org.junit.Assert.*;
 
 @RunWith(JukitoRunner.class)
 public class MethodMatcherTest {

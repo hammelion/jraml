@@ -1,4 +1,4 @@
-package org.jraml.parsers;
+package com.github.hammelion.parsers;
 
 import org.raml.model.Raml;
 import org.raml.model.Resource;

@@ -1,4 +1,4 @@
-package org.jraml;
+package com.github.hammelion;
 
 import java.util.Set;
 
@@ -7,8 +7,8 @@ import javax.inject.Named;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import org.jraml.parsers.RAMLParserFacade;
-import org.jraml.processors.ResourceProcessor;
+import com.github.hammelion.parsers.RAMLParserFacade;
+import com.github.hammelion.processors.ResourceProcessor;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

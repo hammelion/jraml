@@ -1,4 +1,4 @@
-package org.jraml.matchers.method;
+package com.github.hammelion.matchers.method;
 
 import java.beans.Introspector;
 import java.lang.annotation.Annotation;

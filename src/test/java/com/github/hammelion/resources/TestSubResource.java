@@ -1,25 +1,24 @@
-package org.jraml.resources;
+package com.github.hammelion.resources;
 
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.jraml.RAMLConfig;
-import org.jraml.resources.model.TestId;
+import com.github.hammelion.resources.model.TestId;
 
-import javax.ws.rs.PathParam;
+public class TestSubResource {
 
-@RAMLConfig("api.raml")
-public class TestResource {
+    private final TestId id;
 
-    public TestSubResource testId(TestId id) throws NoSuchMethodException {
-        return new TestSubResource(id);
+    public TestSubResource(TestId id) {
 
+        this.id = id;
     }
 
-    public List<Annotation> postById(TestId id) throws NoSuchMethodException {
-        return methodAnnotations("postById", new Class[] { TestId.class });
+    public List<Annotation> getById() throws NoSuchMethodException {
+        return methodAnnotations("getById", new Class[] { });
+
     }
 
     private List<Annotation> methodAnnotations(String methodName, Class[] parameterTypes) throws NoSuchMethodException {

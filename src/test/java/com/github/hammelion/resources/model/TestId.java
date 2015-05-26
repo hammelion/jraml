@@ -1,4 +1,4 @@
-package org.jraml.resources.model;
+package com.github.hammelion.resources.model;
 
 public class TestId {
     private final String value;

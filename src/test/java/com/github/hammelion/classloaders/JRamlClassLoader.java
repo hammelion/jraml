@@ -1,12 +1,12 @@
-package org.jraml.classloaders;
+package com.github.hammelion.classloaders;
 
 import java.net.URLClassLoader;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.jraml.JRamlBootstrap;
-import org.jraml.RAMLConfig;
+import com.github.hammelion.JRamlBootstrap;
+import com.github.hammelion.RAMLConfig;
 
 /**
  * TODO JavaDoc in org.jraml.classloaders

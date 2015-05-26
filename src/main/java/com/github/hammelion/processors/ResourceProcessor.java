@@ -1,4 +1,4 @@
-package org.jraml.processors;
+package com.github.hammelion.processors;
 
 import java.beans.Introspector;
 import java.lang.reflect.Field;
@@ -31,10 +31,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 
-import org.jraml.RAMLConfig;
-import org.jraml.exceptions.CorrespondingMethodNotFoundException;
-import org.jraml.matchers.method.MethodMatcher;
-import org.jraml.parsers.RAMLParserFacade;
+import com.github.hammelion.RAMLConfig;
+import com.github.hammelion.exceptions.CorrespondingMethodNotFoundException;
+import com.github.hammelion.matchers.method.MethodMatcher;
+import com.github.hammelion.parsers.RAMLParserFacade;
 import org.raml.model.Action;
 import org.raml.model.Resource;
 import org.raml.model.parameter.UriParameter;

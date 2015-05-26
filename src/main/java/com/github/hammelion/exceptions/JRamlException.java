@@ -1,4 +1,4 @@
-package org.jraml.exceptions;
+package com.github.hammelion.exceptions;
 
 
 public class JRamlException extends Exception {
