@@ -83,7 +83,7 @@
 <p>By using JAX-RS we would annotate our java code as follows:</p>
 
 <div class="highlight highlight-java"><pre>@Path(<span class="pl-s"><span class="pl-pds">"</span>/test<span class="pl-pds">"</span></span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyName</span> {</pre></div>
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyClassName</span> {</pre></div>
 
 <p>And with JRAML the code transforms into:</p>
 
@@ -105,7 +105,7 @@
 <p>By using JAX-RS we would annotate our java code as follows:</p>
 
 <div class="highlight highlight-java"><pre>@Path(<span class="pl-s"><span class="pl-pds">"</span>/test<span class="pl-pds">"</span></span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyName</span> {
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyClassName</span> {
 <span class="pl-c1">...</span>
 <span class="pl-k">@GET</span>
 <span class="pl-k">public</span> <span class="pl-smi">ReturnType</span> <span class="pl-en">methodName</span>() {</pre></div>
@@ -114,7 +114,7 @@
 
 <div class="highlight highlight-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TestResource</span>
 ...
-<span class="pl-k">public</span> ReturnType getAnyName()</pre></div>
+<span class="pl-k">public</span> ReturnType getAnyMethodName()</pre></div>
 
 <h3>
 <a id="post" class="anchor" href="#post" aria-hidden="true"><span class="octicon octicon-link"></span></a>POST</h3>
@@ -127,7 +127,7 @@
 <p>By using JAX-RS we would annotate our java code as follows:</p>
 
 <div class="highlight highlight-java"><pre>@Path(<span class="pl-s"><span class="pl-pds">"</span>/test<span class="pl-pds">"</span></span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyName</span> {
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyClassName</span> {
 <span class="pl-c1">...</span>
 <span class="pl-k">@POST</span>
 <span class="pl-k">public</span> <span class="pl-smi">ReturnType</span> <span class="pl-en">methodName</span>() {</pre></div>
@@ -136,7 +136,7 @@
 
 <div class="highlight highlight-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TestResource</span>
 ...
-<span class="pl-k">public</span> ReturnType postAnyName()</pre></div>
+<span class="pl-k">public</span> ReturnType postAnyMethodName()</pre></div>
 
 <h3>
 <a id="put" class="anchor" href="#put" aria-hidden="true"><span class="octicon octicon-link"></span></a>PUT</h3>
@@ -149,7 +149,7 @@
 <p>By using JAX-RS we would annotate our java code as follows:</p>
 
 <div class="highlight highlight-java"><pre>@Path(<span class="pl-s"><span class="pl-pds">"</span>/test<span class="pl-pds">"</span></span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyName</span> {
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyClassName</span> {
 <span class="pl-c1">...</span>
 <span class="pl-k">@PUT</span>
 <span class="pl-k">public</span> <span class="pl-smi">ReturnType</span> <span class="pl-en">methodName</span>() {</pre></div>
@@ -158,7 +158,7 @@
 
 <div class="highlight highlight-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TestResource</span>
 ...
-<span class="pl-k">public</span> ReturnType putAnyName()</pre></div>
+<span class="pl-k">public</span> ReturnType putAnyMethodName()</pre></div>
 
 <h3>
 <a id="delete" class="anchor" href="#delete" aria-hidden="true"><span class="octicon octicon-link"></span></a>DELETE</h3>
@@ -171,7 +171,7 @@
 <p>By using JAX-RS we would annotate our java code as follows:</p>
 
 <div class="highlight highlight-java"><pre>@Path(<span class="pl-s"><span class="pl-pds">"</span>/test<span class="pl-pds">"</span></span>)
-<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyName</span> {
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyClassName</span> {
 <span class="pl-c1">...</span>
 <span class="pl-k">@DELETE</span>
 <span class="pl-k">public</span> <span class="pl-smi">ReturnType</span> <span class="pl-en">methodName</span>() {</pre></div>
@@ -180,7 +180,60 @@
 
 <div class="highlight highlight-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TestResource</span>
 ...
-<span class="pl-k">public</span> ReturnType deleteAnyName()</pre></div>
+<span class="pl-k">public</span> ReturnType deleteAnyMethodName()</pre></div>
+
+<h2>
+<a id="method-parameters" class="anchor" href="#method-parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Method parameters</h2>
+
+<p>It is a very good idea to ensure typization in your java REST API. You should do it by wrapping REST parameters in immutable <a href="http://en.wikipedia.org/wiki/Plain_Old_Java_Object">POJO</a>s:</p>
+
+<div class="highlight highlight-java"><pre><span class="pl-k">public</span> <span class="pl-k">final</span> <span class="pl-k">class</span> <span class="pl-en">MyParameter</span>
+{
+   <span class="pl-k">private</span> <span class="pl-k">final</span> <span class="pl-smi">String</span> value;
+
+   <span class="pl-k">public</span> <span class="pl-en">Name</span>(<span class="pl-k">final</span> <span class="pl-smi">String</span> <span class="pl-v">value</span>)
+   {
+      <span class="pl-v">this</span><span class="pl-k">.</span>value <span class="pl-k">=</span> value;
+   }
+
+   <span class="pl-k">public</span> <span class="pl-smi">String</span> <span class="pl-en">getValue</span>()
+   {
+      <span class="pl-k">return</span> <span class="pl-v">this</span><span class="pl-k">.</span>value;
+   }
+
+   <span class="pl-k">@Override</span>
+   <span class="pl-k">public</span> <span class="pl-smi">String</span> <span class="pl-en">toString</span>()
+   {
+      <span class="pl-k">return</span> <span class="pl-v">this</span><span class="pl-k">.</span>value;
+   }
+}</pre></div>
+
+<p>Now it is very easy to map REST parameters to your java implementation:</p>
+
+<h3>
+<a id="query-parameters" class="anchor" href="#query-parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Query parameters</h3>
+
+<p>To define GET on <code>/test</code> URL with query parameters we specify it in RAML file:</p>
+
+<div class="highlight highlight-xml"><pre>/testResource:
+  get:
+    queryParameters:
+        myParameter:
+          type: string</pre></div>
+
+<p>By using JAX-RS we would annotate our java code as follows:</p>
+
+<div class="highlight highlight-java"><pre>@Path(<span class="pl-s"><span class="pl-pds">"</span>/test<span class="pl-pds">"</span></span>)
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">AnyClassName</span> {
+<span class="pl-c1">...</span>
+<span class="pl-k">@GET</span>
+<span class="pl-k">public</span> <span class="pl-smi">ReturnType</span> <span class="pl-en">methodName</span>(<span class="pl-smi">MyParameter</span> <span class="pl-v">anyParameterName</span>) {</pre></div>
+
+<p>And with JRAML the code transforms into:</p>
+
+<div class="highlight highlight-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">TestResource</span>
+...
+<span class="pl-k">public</span> ReturnType getAnyMethodName(MyParameter anyParameterName)</pre></div>
 
 <h1>
 <a id="useful-links" class="anchor" href="#useful-links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Useful links</h1>
