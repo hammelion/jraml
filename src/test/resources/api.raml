@@ -5,7 +5,13 @@ baseUri: http://jraml.org
 protocols: [ HTTP ]
 /test:
   post:
-      queryParameters:
-        testId:
+    body:
+      application/json:
+    queryParameters:
+      testId:
+    responses:
+      200:
+        body:
+          text/plain:
   /{testId}:
       get:

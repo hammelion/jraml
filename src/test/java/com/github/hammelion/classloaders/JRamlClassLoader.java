@@ -6,7 +6,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.github.hammelion.JRamlBootstrap;
-import com.github.hammelion.RAMLConfig;
+import com.github.hammelion.annotations.RAMLConfig;
 
 /**
  * TODO JavaDoc in org.jraml.classloaders

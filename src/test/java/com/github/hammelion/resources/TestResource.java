@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.github.hammelion.RAMLConfig;
+import com.github.hammelion.annotations.RAMLConfig;
 import com.github.hammelion.resources.model.TestId;
 
 @RAMLConfig("api.raml")

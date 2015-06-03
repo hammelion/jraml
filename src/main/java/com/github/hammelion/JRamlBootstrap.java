@@ -7,23 +7,21 @@ import javax.inject.Named;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import com.github.hammelion.parsers.RAMLParserFacade;
-import com.github.hammelion.processors.ResourceProcessor;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.github.hammelion.annotations.RAMLConfig;
+import com.github.hammelion.processors.ResourceProcessor;
 
 @Named
 public class JRamlBootstrap implements ServletContextListener {
     private static final Logger LOG = LoggerFactory.getLogger(JRamlBootstrap.class);
 
-    private final RAMLParserFacade ramlParserFacade;
-
     private final ResourceProcessor resourceProcessor;
 
     @Inject
-    public JRamlBootstrap(RAMLParserFacade ramlParserFacade, ResourceProcessor resourceProcessor) {
-        this.ramlParserFacade = ramlParserFacade;
+    public JRamlBootstrap(ResourceProcessor resourceProcessor) {
         this.resourceProcessor = resourceProcessor;
     }
 
@@ -33,12 +31,12 @@ public class JRamlBootstrap implements ServletContextListener {
         for (Class<?> originalClass : classes) {
             applyConfig(originalClass);
         }
-        System.out.println("JRaml was successfully initialized");
+        LOG.info("JRaml was successfully initialized");
+        // TODO Remove listener from context
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-
     }
 
     public void applyConfig(Class<?> originalClass) {
@@ -47,7 +45,7 @@ public class JRamlBootstrap implements ServletContextListener {
 
     public void applyConfig(Class<?> originalClass, ClassLoader classLoader) {
         try {
-            this.resourceProcessor.process(ramlParserFacade, originalClass, classLoader);
+            this.resourceProcessor.process(originalClass, classLoader);
         } catch (Exception e) {
             LOG.error(e.getMessage(), e);
         }

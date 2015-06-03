@@ -40,9 +40,9 @@ public class MethodMatcher {
         final Set<String> parameters = new HashSet<>();
         parameters.addAll(action.getQueryParameters().keySet());
         parameters.addAll(missingUriParameters);
-        if (action.getBody() != null) {
+        /*if (action.getBody() != null) {
             parameters.addAll(action.getBody().keySet());
-        }
+        }*/
         parameters.addAll(action.getHeaders().keySet());
         return parameters;
     }
