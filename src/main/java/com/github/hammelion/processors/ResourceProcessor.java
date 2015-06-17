@@ -3,6 +3,7 @@ package com.github.hammelion.processors;
 import java.lang.reflect.Method;
 import java.text.MessageFormat;
 
+import com.github.hammelion.exceptions.RamlFileNotFoundException;
 import javassist.CannotCompileException;
 import javassist.ClassPool;
 import javassist.CtClass;
@@ -40,7 +41,7 @@ public class ResourceProcessor {
     }
 
     public void process(Class<?> originalClass, ClassLoader classLoader)
-            throws NotFoundException, CorrespondingMethodNotFoundException, CannotCompileException {
+            throws NotFoundException, CorrespondingMethodNotFoundException, CannotCompileException, RamlFileNotFoundException {
         final String ramlFilePath = originalClass.getAnnotation(RAMLConfig.class).value();
         final String resourceKey = determineResourceKey(originalClass);
         final Resource resource = ramlParserFacade.findResource(ramlFilePath, resourceKey);

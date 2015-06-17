@@ -1,5 +1,6 @@
 package com.github.hammelion.parsers;
 
+import com.github.hammelion.exceptions.RamlFileNotFoundException;
 import org.raml.model.Raml;
 import org.raml.model.Resource;
 import org.raml.parser.visitor.RamlDocumentBuilder;
@@ -16,11 +17,15 @@ public class RAMLParserFacade {
     private Map<String, Raml> ramlFiles = new HashMap<String, Raml>();
     private final RamlDocumentBuilder ramlBuilder = new RamlDocumentBuilder();
 
-    public Resource findResource(String ramlFilePath, String resourceKey) {
+    public Resource findResource(String ramlFilePath, String resourceKey) throws RamlFileNotFoundException {
         // TODO Validation List<ValidationResult> results = RamlValidationService.createDefault().validate(ramlLocation);
         Raml raml = this.ramlFiles.get(ramlFilePath);
         if (raml == null) {
-            raml = this.ramlBuilder.build(ramlFilePath);
+            try {
+                raml = this.ramlBuilder.build(ramlFilePath);
+            } catch (NullPointerException e) {
+                throw new RamlFileNotFoundException(ramlFilePath);
+            }
             this.ramlFiles.put(ramlFilePath, raml);
         }
         return raml.getResource(resourceKey);

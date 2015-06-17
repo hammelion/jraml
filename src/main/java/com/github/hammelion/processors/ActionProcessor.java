@@ -88,8 +88,8 @@ public class ActionProcessor {
             }
         }
         throw new CorrespondingMethodNotFoundException(MessageFormat.format(
-                "Method''s name should start with ''{0}'' and have following parameters:\n{1} {2}", action.getType().toString()
-                        .toLowerCase(), action.getBaseUriParameters(), action.getQueryParameters()));
+                "Method''s name should start with ''{0}'' (Or have @{1} annotation) and have following parameters:\n{2} {3}", action.getType().toString()
+                        .toLowerCase(), action.getType().toString(), action.getBaseUriParameters(), action.getQueryParameters()));
     }
 
     private void annotateMethodWithMimeTypes(ConstPool constPool, CtMethod method, Method originalMethod, Action action)
