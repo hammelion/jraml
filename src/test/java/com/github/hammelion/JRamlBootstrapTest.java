@@ -36,7 +36,7 @@ public class JRamlBootstrapTest {
         System.out.println(ArrayUtils.toString(annotations));
     }
 
-    @Test
+//    @Test
     public void testResource() throws Exception {
         final List<Annotation> annotations = (List<Annotation>) this.testResource.getClass().getMethod("postById", TestId.class)
                 .invoke(this.testResource, new TestId("id007"));
